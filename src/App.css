@@ -1,0 +1,20 @@
+body{
+  background-color: #023b2e;
+  margin: 0%;
+  padding: 0%;
+  text-align: center;
+
+}
+.logo{border-radius: 50%; width: 40px;position:absolute;right: 5px;bottom: 7px;}
+.header{text-align: center;border: 2px;border-radius: 8em;border-color: #d9e4e0;
+  border-style: solid;color: #f7f9f8;background-color: #427664;
+width: 615px;position: relative;height: 53px;margin: 8px;line-height: 0.6em;}
+.rebelan{font-size: 0.95em;top: 5px;}
+.header h3 {font-size: 0.75em;;}
+.fish{border: 2px;border-style: solid;border-color: #1c4f43;background-color: #1c4f43;border-radius: 1em;position: relative;padding-right: 100px;top:10px;padding-bottom:30px;padding-left: 100px;margin: 1.5em;width: 210px;display: inline-table;}
+.fish img{width: 125px;height: 125px;position: absolute;right: 5px;top: 5px;border-radius: 1em;}
+.fish h3{font-size: 1em;color:#ffffff;position: absolute;left:10px;direction: ltr;}
+.fish p{font-size: 0.75em;color:#91aaa4;padding-top:50px;text-align: right;padding-right: 50px;}
+.price{font-size: 1em;color: #ffffff;position: absolute;right: 150px;}
+.toman{font-size: 0.8em;color: #b4c5c1;position: absolute;right: 185px;;}
+
