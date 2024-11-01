@@ -20,24 +20,28 @@ function App() {
           description="300 گرم فیله ماهی، چیپس دست ساز ،سس تارتار"
           price="765 تومان"
           image={fishAndChipsImage}
+          count={-1}
         />
         <FoodItem
           foodname="Fried trout steak| استیک ماهی قزل آلا"
           description="350 گرم استیک فیله قزل آلا سرخ شده،سیب زمینی ،سس"
           price="565 تومان"
           image={friedTroutSteakImage}
+          count={5}
         />
         <FoodItem
           foodname="Chiken Cotaletta|چیکن کوتالتا"
           description="شنیتسل مرغ با پودر سوخاری مخصوص،سالاد میکس،سس تام"
           price="620 تومان"
           image={chikenCotolettaImage}
+          count={5}
         />
         <FoodItem
           foodname="tandoori chiken| چیکن تندوری"
           description=" 400 گرم مرغ گریل شده تندوری و ماست،اسکوپ برنج،سس شوید"
           price="660 تومان"
           image={steakTandooriChikenImage}
+          count={5}
         />
       </main>
     </center>
