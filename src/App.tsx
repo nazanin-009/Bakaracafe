@@ -27,7 +27,7 @@ function App() {
           description="350 گرم استیک فیله قزل آلا سرخ شده،سیب زمینی ،سس"
           price="565 تومان"
           image={friedTroutSteakImage}
-          count={5}
+          count={0}
         />
         <FoodItem
           foodname="Chiken Cotaletta|چیکن کوتالتا"

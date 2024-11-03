@@ -19,4 +19,4 @@ width: 615px;position: relative;height: 53px;margin: 8px;line-height: 0.6em;}
 .toman{font-size: 0.8em;color: #b4c5c1;position: absolute;right: 185px;;}
 .fish span{ border: 2px;border-style: solid;border-radius: 8em;background-color: #427664;position: absolute;width: 22px;display: inline-block;padding: 5px;height:22px;line-height: 22px;font-weight: bolder;font-size: 120%;top: 0;right: 0;text-align:center;color: #f7f9f8 ;}
 .fish.available{opacity: 100%;}
-.fish.unavailable{opacity: 100%; }
+.fish.unavailable{opacity: 50%; }

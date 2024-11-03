@@ -10,8 +10,12 @@ function FoodItem(attrs: {
   let foodAvailabiltyClass ="available";
   let CountSpan=<span>{attrs.count}</span>;
   if (attrs.count ==-1) {
-    foodAvailabiltyClass ="unavailable";
+    foodAvailabiltyClass ="available";
     CountSpan = <span>&#8734;</span > ;
+  }
+  if (attrs.count ==0) {
+    foodAvailabiltyClass ="unavailable";
+    CountSpan = <></> ;
   }
   return (
     <article className={"fish " +foodAvailabiltyClass}>
