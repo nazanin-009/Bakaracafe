@@ -12,7 +12,7 @@ function FoodItem(attrs: {
   
 }) {
   const [changeMode,setchangeMode]=useState(attrs.count)
-  const [mode,setMode]=useState<'increase' | 'decrease'>('increase');
+
   let foodAvailabiltyClass ="available";
   let CountSpan=<span>{changeMode}</span>;
   
@@ -27,10 +27,10 @@ function FoodItem(attrs: {
   }
   
   const handleClick = () => {
-    if (mode === 'increase') {
+    if (attrs.mode === 'increase') {
         setchangeMode(prevchangemode => prevchangemode+ 1) ;
     }
-   if (mode === 'decrease') {
+   if (attrs.mode === 'decrease') {
         setchangeMode(prevchangemode => prevchangemode- 1);
     }console.log(changeMode)
 };
@@ -50,6 +50,7 @@ function FoodItem(attrs: {
           {attrs.price}
         </div>
       </strong>
+      <div className="mode">{attrs.mode}</div>
       {changeMode>0 && <span>{changeMode}</span> }
       {changeMode<0 && <span>&infin;</span> }
      

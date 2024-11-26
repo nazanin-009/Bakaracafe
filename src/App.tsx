@@ -8,7 +8,7 @@ import "./App.css";
 import FoodItem from "./components/fooditems/FoodItems";
 
 function App() {
-  const App: React.FC = () => {
+  
     const [changeMode, setChangeMode] = useState(0);
     const [mode, setMode] = useState<'increase' | 'decrease'>('increase');
     useEffect (() => {
@@ -29,7 +29,7 @@ function App() {
      if (mode === 'decrease') {
           setChangeMode(prevchangemode => prevchangemode- 1);
       }console.log(changeMode)
-  };
+  
     
     return (
       <div>
@@ -55,7 +55,7 @@ function App() {
           price="765 تومان"
           image={fishAndChipsImage}
           count={-1}
-          mode="increase"
+          mode={mode}
         />
         <FoodItem
           foodname="Fried trout steak| استیک ماهی قزل آلا"
@@ -64,7 +64,7 @@ function App() {
           image={friedTroutSteakImage}
           count={2}
          
-          mode="decrease"
+          mode={mode}
         />
         <FoodItem
           foodname="Chiken Cotaletta|چیکن کوتالتا"
@@ -73,7 +73,7 @@ function App() {
           image={chikenCotolettaImage}
           count={5}
           
-          mode="decrease"
+          mode={mode}
         />
         <FoodItem
           foodname="tandoori chiken| چیکن تندوری"
@@ -82,7 +82,7 @@ function App() {
           image={steakTandooriChikenImage}
           count={5}
           
-          mode="decrease"
+          mode={mode}
         />
       </main>
     </center>
