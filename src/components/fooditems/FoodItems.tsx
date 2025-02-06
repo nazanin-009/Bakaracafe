@@ -1,6 +1,7 @@
 import { text } from "stream/consumers";
 import "./style.css";
 import React, { useState } from 'react';
+import { click } from "@testing-library/user-event/dist/click";
 
 function FoodItem(attrs: {
   foodname: string;
@@ -10,7 +11,10 @@ function FoodItem(attrs: {
   count: number;
   mode:string;
   
+  
+  
 }) {
+  
   const [changeMode,setchangeMode]=useState(attrs.count)
 
   let foodAvailabiltyClass ="available";
@@ -25,7 +29,6 @@ function FoodItem(attrs: {
     foodAvailabiltyClass ="unavailable";
     CountSpan = <></> ;
   }
-  
   const handleClick = () => {
     if (attrs.mode === 'increase') {
         setchangeMode(prevchangemode => prevchangemode+ 1) ;
@@ -34,15 +37,16 @@ function FoodItem(attrs: {
         setchangeMode(prevchangemode => prevchangemode- 1);
     }console.log(changeMode)
 };
-  
-
  
-  
-    
+
+
 
   return (
+
     <article  id="items" onClick={handleClick} className={"fish " +foodAvailabiltyClass}>
-      <img src={attrs.image} alt="attrs.image" />
+      
+      <body className="dark"> </body>
+                  <img src={attrs.image} alt="attrs.image" />
       <h3>{attrs.foodname}</h3>
       <p dir="rtl">{attrs.description}</p>
             <strong>
@@ -50,13 +54,12 @@ function FoodItem(attrs: {
           {attrs.price}
         </div>
       </strong>
-      <div className="mode">{attrs.mode}</div>
+    
       {changeMode>0 && <span>{changeMode}</span> }
       {changeMode<0 && <span>&infin;</span> }
      
-     
-
     </article>
+    
   );
 };
 export default FoodItem;

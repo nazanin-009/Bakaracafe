@@ -1,5 +1,0 @@
-.fooditem.container{
-   border: 2px;border-style: solid;border-color: #1c4f43;background-color: #1c4f43;border-radius: 1em;position: relative;padding-right: 100px;top:10px;padding-bottom:30px;padding-left: 100px;margin: 1.5em;width: 210px;
-}
-.fooditem.img{width: 125px;height: 125px;position: absolute;right: 5px;top: 5px;border-radius: 1em;}
-.fish{border: 2px;border-style: solid;border-color: #1c4f43;background-color: #1c4f43;border-radius: 1em;position: relative;padding-right: 100px;top:10px;padding-bottom:30px;padding-left: 100px;margin: 1.5em;width: 210px;display: inline-table;}

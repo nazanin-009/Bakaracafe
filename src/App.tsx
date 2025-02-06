@@ -8,38 +8,55 @@ import "./App.css";
 import FoodItem from "./components/fooditems/FoodItems";
 
 function App() {
-  
-    const [changeMode, setChangeMode] = useState(0);
-    const [mode, setMode] = useState<'increase' | 'decrease'>('increase');
-    useEffect (() => {
-      const handleKeyPress = (event: KeyboardEvent) => {
-        if (event.key === 'i') { setMode('increase');
-        } else if (event.key === 'd') {setMode('decrease');
-        }
-      };
-      window.addEventListener('keydown', handleKeyPress);
-      return () => {
-        window.removeEventListener('keydown', handleKeyPress);
-      };
-    }, []);
-    const handleClick = () => {
-      if (mode === 'increase') {
-        setChangeMode(prevchangemode => prevchangemode+ 1) ;
+  const [changeMode, setChangeMode] = useState(0);
+  const [mode, setMode] = useState<'increase' | 'decrease'>('increase');
+  const [darkMode, setDarkMode] = useState(false);
+  useEffect (() => {
+    const handleKeyPress = (event: KeyboardEvent) => {
+      if (event.key === 'i') { setMode('increase');
+      } else if (event.key === 'd') {setMode('decrease');
       }
-     if (mode === 'decrease') {
-          setChangeMode(prevchangemode => prevchangemode- 1);
-      }console.log(changeMode)
+    };
+    window.addEventListener('keydown', handleKeyPress);
+    return () => {
+      window.removeEventListener('keydown', handleKeyPress);
+    };
+  }, []);
+  const handleClick = () => {
+    if (mode === 'increase') {
+      setChangeMode(prevchangemode => prevchangemode+ 1) ;
+    }
+   if (mode === 'decrease') {
+        setChangeMode(prevchangemode => prevchangemode- 1);
+    }console.log(changeMode)
+   
+   return (
+    <div>
+      <h1> Current changeMode: {changeMode}</h1>
+      <button onClick={handleClick}>Click to {mode}</button>
+      <p>Press 'i' to increase and 'd' to decrease the value.</p>
+    </div>
+   );
   
-    
-    return (
-      <div>
-        <h1> Current changeMode: {changeMode}</h1>
-        <button onClick={handleClick}>Click to {mode}</button>
-        <p>Press 'i' to increase and 'd' to decrease the value.</p>
-      </div>
-    );
-  }; 
+  };
+  useEffect( () =>{
+    const savedMode=localStorage.getItem("darkMode")==='true';
+    setDarkMode(savedMode);
+    }, []);
+  useEffect( () =>{
+    if (darkMode)
+        {document.body.classList.add("darkMode");}
+    else{document.body.classList.remove("darkMode");}
+     
+    <div className="dark">
+      <h1>{darkMode ? 'Dark Mode' : 'Light Mode'}</h1>
+      <button className='button' onClick={handleClick}> Click to {darkMode}
   
+      </button>
+   
+    </div>
+  
+  },[darkMode]);
   return (
     <center>
       <header className="header">
@@ -47,6 +64,10 @@ function App() {
         <h2 className="rebelan">REBELAN</h2>
         <h3>Meet the Perfection</h3>
       </header>
+      <body>
+      
+      
+      </body>
       <main>
         <FoodItem
           foodname="Fish&chips|فیش اند چیپس"
@@ -56,6 +77,7 @@ function App() {
           image={fishAndChipsImage}
           count={-1}
           mode={mode}
+          
         />
         <FoodItem
           foodname="Fried trout steak| استیک ماهی قزل آلا"
@@ -63,8 +85,8 @@ function App() {
           price="565 تومان"
           image={friedTroutSteakImage}
           count={2}
-         
           mode={mode}
+          
         />
         <FoodItem
           foodname="Chiken Cotaletta|چیکن کوتالتا"
@@ -72,7 +94,6 @@ function App() {
           price="620 تومان"
           image={chikenCotolettaImage}
           count={5}
-          
           mode={mode}
         />
         <FoodItem
@@ -81,10 +102,10 @@ function App() {
           price="660 تومان"
           image={steakTandooriChikenImage}
           count={5}
-          
           mode={mode}
         />
       </main>
+      <script src='js/main.js'></script>
     </center>
   );
 }
